@@ -1,8 +1,8 @@
 const { isNumberString, alternatingCaps } = require('./utils');
 
-const USER_ID = "john_doe_17091999";
-const EMAIL = "john@xyz.com";
-const ROLL_NUMBER = "ABCD123";
+const USER_ID = "devansh_kumar_gupta_11022005";
+const EMAIL = "devanshkg19@gmail.com";
+const ROLL_NUMBER = "22BCE10417";
 
 function processData(inputData) {
     if (!Array.isArray(inputData)) {
@@ -15,7 +15,6 @@ function processData(inputData) {
     const special_characters = [];
     let sum = 0;
 
-    // Collect for concat only
     let concatPool = "";
 
     inputData.forEach(el => {
@@ -27,9 +26,7 @@ function processData(inputData) {
             else odd_numbers.push(s);
         }
         else if (/^[A-Za-z]+$/.test(s)) {
-            // Preserve the whole string, uppercase for alphabets array
             alphabets.push(s.toUpperCase());
-            // Accumulate original characters for concat logic
             concatPool += s;
         }
         else {
@@ -37,7 +34,6 @@ function processData(inputData) {
         }
     });
 
-    // Build concat_string: reverse the pooled characters then alternating caps
     const reversed = concatPool.split('').reverse().join('');
     const concat_string = alternatingCaps(reversed);
 
