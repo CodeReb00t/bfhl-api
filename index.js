@@ -1,10 +1,11 @@
 const express = require('express');
-const bfhlRouter = require('./api/bfhl');
+const bfhlRoute = require('./api/bfhl');
 
 const app = express();
 app.use(express.json());
 
-app.use('/bfhl', bfhlRouter);
+// Mount /bfhl route
+app.use('/bfhl', bfhlRoute);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
